@@ -2,12 +2,12 @@
   ******************************************************************************
   * @file    epd.h
   * @author  MCD Application Team
-  * @brief   This file contains all the functions prototypes for the 
-  *          EPD (E Paper Display) driver.   
+  * @brief   This file contains all the functions prototypes for the
+  *          EPD (E Paper Display) driver.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -16,14 +16,14 @@
   *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __EPD_H
 #define __EPD_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -36,7 +36,7 @@
 /** @addtogroup Components
   * @{
   */
-  
+
 /** @addtogroup Common
   * @{
   */
@@ -54,17 +54,17 @@
   */
 typedef struct
 {
-  void     (*Init)(void);
-  void     (*WritePixel)(uint8_t);
+  void (*Init)(void);
+  void (*WritePixel)(uint8_t);
 
   /* Optimized operation */
-  void     (*SetDisplayWindow)(uint16_t, uint16_t, uint16_t, uint16_t);
-  void     (*RefreshDisplay)(void);
-  void     (*CloseChargePump)(void);
+  void (*SetDisplayWindow)(uint16_t, uint16_t, uint16_t, uint16_t);
+  void (*RefreshDisplay)(void);
+  void (*CloseChargePump)(void);
 
   uint16_t (*GetEpdPixelWidth)(void);
   uint16_t (*GetEpdPixelHeight)(void);
-  void     (*DrawImage)(uint16_t, uint16_t, uint16_t, uint16_t, uint8_t*);
+  void (*DrawImage)(uint16_t, uint16_t, uint16_t, uint16_t, uint8_t *);
 }
 EPD_DrvTypeDef;
 /**
